@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import errorHandler from "./middleware/error.middleware.js";
-
+import workspaceRoutes from "./routes/workspace.routes.js";
 
 
 const app = express();
@@ -39,5 +39,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 
 app.use(errorHandler);
+
+app.use("/api/workspaces", workspaceRoutes);
 
 export default app;
